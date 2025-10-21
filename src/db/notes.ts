@@ -3,7 +3,7 @@ import * as SQLite from 'expo-sqlite';
 //abre ou cria o local database called notas.db
 const db = SQLite.openDatabaseSync("notas.db")
 
-//creating a table if it doesnt exist
+//cria uma tabela se não existe
 db.execSync(`
     CREATE TABLE IF NOT EXISTS NOTES(
        id INTEGER PRIMARY KEY AUTOINCREMENT,
