@@ -6,7 +6,7 @@ export default function Index() {
   return (
     <View>
       <Button title="Adicionar nota" onPress={()=>router.push("/add")}></Button>
-      <Text>LISTA DE NOTASS</Text>
+      <Text>LISTA DE NOTAS</Text>
     </View>
       
   );
