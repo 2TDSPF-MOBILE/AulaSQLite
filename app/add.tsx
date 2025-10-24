@@ -40,7 +40,7 @@ export default function AddNoteScreen(){
               style={{borderWidth:1, padding:20,
               marginBottom:10, borderRadius:6 }}
               />
-              <Button title="salvar"/>
+              <Button title="salvar" onPress={handleSave}/>
         </View>
     )
 }
