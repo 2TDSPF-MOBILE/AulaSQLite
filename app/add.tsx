@@ -2,7 +2,7 @@ import { addNotes } from "@/src/db/notes";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Alert, Button, TextInput, View } from "react-native";
-
+import { MotiView,MotiText } from "moti";
 export default function AddNoteScreen(){
     const [title, setTitle]=useState("")//estado para o title
     const [content, setContent]= useState("")// state para o content
@@ -22,6 +22,11 @@ export default function AddNoteScreen(){
     return(
         <View style={{flex:1, padding:20}}>
 
+            <MotiView
+                from={{opacity:0,translateX:-30}}
+                animate={{opacity:1,translateX:0}}
+                transition={{delay:300}}
+            >
             {/* TextInput do título */}
             <TextInput
             placeholder="Título"
@@ -31,7 +36,14 @@ export default function AddNoteScreen(){
                 marginBottom:10, borderRadius:6
             }}
             />
-              {/* TextInput do conteúdo da nota */}
+            </MotiView>
+            
+            <MotiView
+                from={{opacity:0,translateX:30}}
+                animate={{opacity:1,translateX:0}}
+                transition={{delay:300}}
+            >
+                {/* TextInput do conteúdo da nota */}
               <TextInput
               placeholder="Conteúdo"
               value={content}
@@ -40,7 +52,20 @@ export default function AddNoteScreen(){
               style={{borderWidth:1, padding:20,
               marginBottom:10, borderRadius:6 }}
               />
-              <Button title="salvar" onPress={handleSave}/>
+            </MotiView>
+             
+             <MotiView
+                from={{scale:1}}
+                animate={{scale:1.05}}
+                transition={{
+                    loop:true,
+                    type:"timing",
+                    duration:300
+                }}
+             >
+                <Button title="salvar" onPress={handleSave}/>
+             </MotiView>
+             
         </View>
     )
 }
