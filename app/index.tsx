@@ -34,13 +34,13 @@ export default function Index() {
           <MotiView
             from={{opacity:0, translateY:20}}
             animate={{opacity:1,translateY:0}}
-            transition={{delay:index*1000}}
+            transition={{delay:index*300}}
             style={{ borderBottomWidth: 1, padding: 10, marginBottom: 5 }}
           >
             <MotiText
               from={{scale:0.95}}
               animate={{scale:1}}
-              transition={{delay:index*1000}}
+              transition={{delay:index*300}}
               style={{ fontWeight: 'bold', fontSize: 16 }}
             >
               {item.title}
